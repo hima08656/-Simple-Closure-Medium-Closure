@@ -1,0 +1,20 @@
+function createWallet() {
+  let balance = 0;
+
+  return {
+    addBalance: function(amount) {
+      if (typeof amount === 'number' && amount > 0) {
+        balance += amount;
+      }
+    },
+    getBalance: function() {
+      return balance;
+    }
+  };
+}
+
+// Example usage:
+let myWallet = createWallet();
+myWallet.addBalance(100);
+myWallet.addBalance(200);
+console.log(myWallet.getBalance()); // 300
